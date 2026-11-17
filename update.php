@@ -54,7 +54,7 @@
             <?php
             include 'conexao.php';
 
-            $sql = 'SELECT id,Marca,Modelo, Marca,Ano FROM Aluno';
+            $sql = 'SELECT id,Marca,Modelo, Marca,Ano FROM Veiculo';
             $result = $conn->query($sql);
 
             if($result->num_rows > 0){
