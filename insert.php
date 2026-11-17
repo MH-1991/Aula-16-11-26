@@ -50,9 +50,9 @@ if(isset($_POST['modelo'])){
     $marca=$_POST['ano'];
 
 
-    $sql="INSERT INTO Veiculo(Modelo, Marca, Placa, Ano) VALUES (?,?)";
-    $stmt = $conn->GaragemDB($sql);
-    $stmt->bind_param("si", $modelo, $marca, $placa, $ano);
+    $sql="INSERT INTO Veiculo(Modelo, Marca, Placa, Ano) VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssi", $modelo, $marca, $placa, $ano);
     $stmt->execute();
     $stmt->close();
 }
